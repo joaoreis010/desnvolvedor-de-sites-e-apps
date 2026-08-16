@@ -32,10 +32,10 @@ export const Process = () => {
           {steps.map((step, i) => (
             <motion.div 
               key={step.id}
-              initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
-              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              initial={{ opacity: 0, y: 30, scale: 0.95, filter: 'blur(10px)' }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.1, duration: 0.8 }}
+              transition={{ delay: i * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="relative group p-8 rounded-3xl bg-white/[0.02] border border-white/5"
             >
               <div className="text-6xl md:text-7xl font-black text-white/5 absolute -top-8 -left-4 group-active:text-violet-500/10 transition-colors duration-500">{step.id}</div>
@@ -58,7 +58,12 @@ const FAQItem = ({ question, answer }: any) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="border-b border-white/10">
+    <motion.div 
+      initial={{ opacity: 0, y: 10, filter: 'blur(5px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      viewport={{ once: true, margin: "-50px" }}
+      className="border-b border-white/10"
+    >
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-6 md:py-8 flex items-center justify-between text-left group"
@@ -78,7 +83,7 @@ const FAQItem = ({ question, answer }: any) => {
       >
         <p className="pb-8 text-gray-500 leading-relaxed text-[13px] md:text-sm max-w-2xl">{answer}</p>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -200,13 +205,18 @@ export const Footer = () => {
           <div>
             <div className="text-[10px] font-black text-white uppercase tracking-widest mb-6">Contato</div>
             <a href="mailto:portaleadss@gmail.com" className="text-gray-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest block mb-2">portaleadss@gmail.com</a>
-            <span className="text-gray-700 text-[10px] font-black uppercase tracking-widest">João Reis • Founder</span>
+            <span className="text-gray-500 text-[10px] font-bold uppercase tracking-widest block">João Reis • Founder</span>
+            <span className="text-violet-400 text-[10px] font-bold uppercase tracking-widest block mt-1">Eduardo Resende - DEV</span>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 border-t border-white/5 pt-12 text-[8px] font-black text-gray-800 uppercase tracking-[0.3em]">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 border-t border-white/5 pt-12 text-[9px] font-bold text-gray-500 uppercase tracking-[0.25em]">
           <span>© 2026 Portal Leads. Todos os direitos reservados.</span>
-          <span>Desenvolvido com excelência por João Reis.</span>
+          <div className="flex items-center gap-3">
+            <span>Desenvolvido com excelência</span>
+            <span>•</span>
+            <span className="text-white font-black">Eduardo Resende - DEV</span>
+          </div>
         </div>
       </div>
     </footer>
