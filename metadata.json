@@ -1,0 +1,6 @@
+{
+  "name": "Portal Leads",
+  "description": "Agência digital premium focada em presença digital de elite, sites inteligentes com IA e tráfego pago de alta performance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

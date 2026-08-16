@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-violet-500: #8b5cf6;
+  --color-violet-400: #a78bfa;
+  --color-violet-600: #7c3aed;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-black text-gray-200 antialiased overflow-x-hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  scroll-behavior: smooth;
+}
+
+/* Cinematic Typography */
+h1, h2, h3, h4 {
+  @apply tracking-tighter;
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 8s ease infinite;
+}
+
+/* Custom Scrollbar - Minimalist */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full transition-colors;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-violet-500/50;
+}
+
+/* Glassmorphism */
+.glass {
+  @apply bg-black/50 backdrop-blur-xl border border-white/10;
+}
+
+/* Mask for text reveal */
+.mask-reveal {
+  mask-image: linear-gradient(to bottom, black 50%, transparent);
+}
