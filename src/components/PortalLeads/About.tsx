@@ -1,10 +1,9 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Magnetic } from './Magnetic';
-import eduardoImg from '../../assets/images/eduardo_original.jpg';
 
 export const Positioning = () => {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
@@ -65,8 +64,19 @@ export const Positioning = () => {
   );
 };
 
+interface TeamMember {
+  name: string;
+  role: string;
+  bio: string;
+  skills: string[];
+  image: string;
+  position?: string;
+  highlight?: string;
+  case?: string;
+}
+
 export const About = () => {
-  const team = [
+  const team: TeamMember[] = [
     {
       name: "JOÃO REIS",
       role: "PROGRAMADOR E DESENVOLVEDOR WEB",
@@ -82,8 +92,8 @@ export const About = () => {
       highlight: "AGENTIC CODING & IA",
       case: "Escritório de Advocacia em Portugal",
       skills: ["Agentic Coding", "Inteligência Artificial", "Sistemas & Web", "Inovação & Estratégia"],
-      image: eduardoImg,
-      position: "object-top"
+      image: "https://lh3.googleusercontent.com/d/1Uf6fyGPbN2lrhRUFB-FWBjhLeTOGgfya",
+      position: "object-center"
     }
   ];
 

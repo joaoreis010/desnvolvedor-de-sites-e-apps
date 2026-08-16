@@ -3,7 +3,19 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Check, Zap, Smartphone, Globe, MessageSquare, Search, ArrowRight, BarChart3, ShieldCheck, Cpu } from 'lucide-react';
 import { Magnetic } from './Magnetic';
 
-const PlanCard = ({ title, price, headline, features, cta, maintenance, isPremium, isIntelligent, demo }: any) => (
+interface PlanCardProps {
+  title: string;
+  price: string;
+  headline: string;
+  features: string[];
+  cta: string;
+  maintenance: string;
+  isPremium?: boolean;
+  isIntelligent?: boolean;
+  demo?: React.ReactNode;
+}
+
+const PlanCard = ({ title, price, headline, features, cta, maintenance, isPremium, isIntelligent, demo }: PlanCardProps) => (
   <motion.div 
     initial={{ opacity: 0, y: 30, scale: 0.95, filter: 'blur(10px)' }}
     whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}

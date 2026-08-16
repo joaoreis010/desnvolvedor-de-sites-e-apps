@@ -1,9 +1,21 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { motion, useScroll, useTransform, useSpring, useMotionValue, AnimatePresence } from 'motion/react';
+import { motion, useScroll, useTransform, useSpring, useMotionValue, AnimatePresence, MotionValue } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { Magnetic } from './Magnetic';
 
-const Particle = ({ p, mouseX, mouseY }: { p: any, mouseX: any, mouseY: any }) => {
+interface ParticleProps {
+  p: {
+    id: number;
+    x: number;
+    y: number;
+    size: number;
+    duration: number;
+  };
+  mouseX: MotionValue<number>;
+  mouseY: MotionValue<number>;
+}
+
+const Particle = ({ p, mouseX, mouseY }: ParticleProps) => {
   const x = useTransform(mouseX, [-20, 20], [p.id % 2 === 0 ? 30 : -30, p.id % 2 === 0 ? -30 : 30]);
   const y = useTransform(mouseY, [-20, 20], [p.id % 3 === 0 ? 30 : -30, p.id % 3 === 0 ? -30 : 30]);
 
@@ -31,7 +43,13 @@ const Particle = ({ p, mouseX, mouseY }: { p: any, mouseX: any, mouseY: any }) =
   );
 };
 
-const TechBackground = ({ mouseX, mouseY, scrollY }: { mouseX: any, mouseY: any, scrollY: any }) => {
+interface TechBackgroundProps {
+  mouseX: MotionValue<number>;
+  mouseY: MotionValue<number>;
+  scrollY: MotionValue<number>;
+}
+
+const TechBackground = ({ mouseX, mouseY, scrollY }: TechBackgroundProps) => {
   const points = useMemo(() => Array.from({ length: 40 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
