@@ -103,20 +103,28 @@ export const Footer = () => {
           </motion.h2>
           <div className="space-y-1">
             <FAQItem 
-              question="O site é personalizado?" 
-              answer="Sim, cada projeto é desenvolvido do zero, de acordo com a necessidade estratégica e identidade visual de cada negócio." 
+              question="O que é Hospedagem e por que ela é indispensável para meu negócio?" 
+              answer="A hospedagem é o servidor profissional (o 'terreno seguro') onde todos os arquivos, códigos, fotos e sistemas do seu site ficam guardados na internet. É ela quem garante que sua página permaneça no ar 24 horas por dia, 7 dias por semana, com velocidade de carregamento em menos de 2 segundos e proteção com cadeado de segurança SSL. Uma hospedagem de qualidade evita que seu site caia em picos de visitas e garante que você não queime dinheiro em anúncios." 
             />
             <FAQItem 
-              question="Funciona no celular?" 
-              answer="Absolutamente. Todos os nossos projetos são desenvolvidos com a metodologia 'mobile-first' e performance otimizada para qualquer dispositivo." 
+              question="O que é Domínio Próprio e qual a diferença de ter um endereço oficial?" 
+              answer="O domínio próprio é o endereço exclusivo da sua empresa na internet (ex: www.suaempresa.com.br). Ele funciona como a placa oficial na fachada da sua empresa na melhor avenida da cidade. Ter domínio próprio elimina links amadores, passa credibilidade imediata para o cliente passar o cartão ou fechar contrato, possibilita e-mails corporativos (contato@suaempresa.com.br) e melhora o posicionamento no Google." 
             />
             <FAQItem 
-              question="Posso integrar o WhatsApp?" 
-              answer="Sim, integramos botões de contato direto e formulários estratégicos para facilitar a conversão de leads." 
+              question="O que é Design Personalizado e qual a vantagem sobre modelos prontos?" 
+              answer="Design personalizado é uma arquitetura visual e estratégica desenhada sob medida para a sua marca, suas cores e seu público-alvo. Ao contrário de modelos prontos genéricos que centenas de concorrentes usam, o design exclusivo valoriza o seu serviço, transmite sofisticação imediata e permite que você cobre preços maiores, guiando o olhar do cliente com precisão até o fechamento da compra." 
             />
             <FAQItem 
-              question="Domínio e hospedagem estão incluídos?" 
-              answer="Oferecemos planos que já incluem toda a infraestrutura técnica (Site Inteligente) para que você não precise se preocupar com nada." 
+              question="O que é Responsividade e por que ela é prioridade máxima hoje?" 
+              answer="Responsividade é a tecnologia que faz o site se autoajustar com perfeição absoluta a qualquer tamanho de tela: smartphones (iPhone e Android), tablets e computadores. Hoje, mais de 80% das pessoas no Brasil navegam e compram pelo celular. Com a responsividade, os textos ficam fáceis de ler, as imagens não quebram e os botões têm o tamanho ideal para o toque com o polegar, sem que o cliente precise dar zoom irritante." 
+            />
+            <FAQItem 
+              question="O que é IA Integrada e como ela gera mais vendas para o meu negócio?" 
+              answer="A IA Integrada coloca a inteligência artificial para trabalhar como sua consultora comercial 24h por dia: ela responde dúvidas frequentes de visitantes instantaneamente, mesmo fora do horário comercial ou nos finais de semana, quebrando objeções e qualificando leads para chegarem prontos para comprar no seu WhatsApp." 
+            />
+            <FAQItem 
+              question="Vocês cuidam de toda a configuração técnica para mim?" 
+              answer="Sim! Nosso compromisso é entregar tudo 100% pronto, testado e publicado. No plano Site Inteligente, nós cuidamos do domínio, da hospedagem, da inteligência artificial e da publicação para que você se preocupe apenas em receber os pedidos e mensagens no seu WhatsApp." 
             />
           </div>
         </div>

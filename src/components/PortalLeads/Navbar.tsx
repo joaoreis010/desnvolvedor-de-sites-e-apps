@@ -13,10 +13,10 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Manifesto', href: '#manifesto' },
+    { name: 'Manifesto', href: '#posicionamento' },
+    { name: 'O Que É / Pilares', href: '#pilares' },
     { name: 'Cases', href: '#cases' },
-    { name: 'Serviços', href: '#servicos' },
-    { name: 'Preços', href: '#precos' },
+    { name: 'Investimento', href: '#investimento' },
   ];
 
   return (

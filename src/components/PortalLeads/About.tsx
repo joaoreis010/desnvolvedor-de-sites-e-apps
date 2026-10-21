@@ -10,10 +10,10 @@ export const Positioning = () => {
   });
 
   const pillars = [
-    { name: "DESIGN", delay: 0 },
-    { name: "TECNOLOGIA", delay: 0.1 },
-    { name: "IA", delay: 0.2 },
-    { name: "MARKETING", delay: 0.3 }
+    { name: "DESIGN", sub: "Personalizado & Exclusivo", detail: "Sem modelos prontos. Identidade autoral desenhada para encantar e permitir cobrar mais caro.", delay: 0 },
+    { name: "TECNOLOGIA", sub: "Hospedagem & Velocidade", detail: "Servidor seguro 24h, carregamento instantâneo e proteção SSL para nunca perder vendas.", delay: 0.1 },
+    { name: "IA INTEGRADA", sub: "Automação Inteligente", detail: "Atendimento imediato 24/7 e respostas personalizadas que aceleram conversões no WhatsApp.", delay: 0.2 },
+    { name: "RESPONSIVO", sub: "Mobile-First Cirúrgico", detail: "Adaptação perfeita a qualquer celular ou tela. Mais de 80% das compras começam aqui.", delay: 0.3 }
   ];
 
   return (
@@ -44,7 +44,7 @@ export const Positioning = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {pillars.map((pillar) => (
             <motion.div 
               key={pillar.name}
@@ -52,10 +52,16 @@ export const Positioning = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
               viewport={{ once: true }}
               transition={{ delay: pillar.delay, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white/5 border border-white/10 aspect-square flex items-center justify-center rounded-2xl md:rounded-3xl group active:bg-white active:border-white transition-all duration-500"
+              whileHover={{ y: -4 }}
+              className="bg-white/5 border border-white/10 p-6 md:p-8 flex flex-col justify-between rounded-3xl group hover:border-violet-500/50 hover:bg-white/[0.08] transition-all duration-300"
             >
-              <span className="text-sm md:text-2xl font-black text-white group-active:text-black tracking-widest">{pillar.name}</span>
+              <div>
+                <span className="text-lg md:text-2xl font-black text-white tracking-widest block mb-1">{pillar.name}</span>
+                <span className="text-[9px] md:text-[10px] font-black uppercase tracking-wider text-violet-400 block mb-4">{pillar.sub}</span>
+              </div>
+              <p className="text-xs text-gray-400 group-hover:text-gray-300 leading-relaxed">
+                {pillar.detail}
+              </p>
             </motion.div>
           ))}
         </div>
